@@ -1,7 +1,7 @@
 console.log("LOADED");
 var module = angular.module('elevatorModule', ['nvd3']);
 
-module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService', function($scope, $timeout, ElevatorDataService){
+module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService', 'DataTransformService', function($scope, $timeout, ElevatorDataService, DataTransformService){
     $scope.columnHeaders = ['Time', 'ACC-X', 'ACC-Y', 'ACC-Z', 'ALT', 'PRESSURE', 'MOTION', 'BUTTON'];
     $scope.elevatorData = [];
     $scope.pollFrequency = 5000;
@@ -54,6 +54,9 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
             $scope.accelerationGraphData[0].values.push({x:new Date(value.Timestamp).valueOf(), y:value.AccZ});
             if ($scope.accelerationGraphData[0].values.length > 20) $scope.accelerationGraphData[0].values.shift();
             //$scope.$apply();
+
+
+
         }
     };
 
