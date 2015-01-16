@@ -12,6 +12,11 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
     $scope.buttonLabel = "Show All Data";
     $scope.polling = false;
 
+    $scope.accelerationGraphFilter = {
+        startTime:{hours:0, minutes:0, seconds:0},
+        endTime:{hours:0, minutes:0, seconds:0}
+    };
+
     $scope.init = function() {
          //$scope.pollServer();
         $scope.loadAllData();
@@ -52,8 +57,6 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
         if (!$scope.polling) {
             angular.forEach(newValue, function(value, key){
                 $scope.accelerationGraphData[0].values.push({x:new Date(value.Timestamp).valueOf(), y:value.AccZ});
-                //if ($scope.accelerationGraphData[0].values.length > 20) $scope.accelerationGraphData[0].values.shift();
-                //$scope.$apply();
             });
             $scope.accelerationGraphData[0].values.push({x:null, y:null});
         }

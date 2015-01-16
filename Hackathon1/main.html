@@ -49,6 +49,24 @@
         </div>
         <div ng-show="showAccGraph">
             <button ng-click="showRawDataToggle()">Raw Data</button>
+            <fieldset>
+            <h2>Start Time</h2>
+            <label for="startHours">HH</label>
+            <input name="startHours" ng-model="accelerationGraphFilter.startTime.hours" type="text"/>
+            <label for="startMinutes">MM</label>
+            <input name="startMinutes" ng-model="accelerationGraphFilter.startTime.minutes" type="text"/>
+            <label for="startSeconds">ss</label>
+            <input name="startSeconds" ng-model="accelerationGraphFilter.startTime.seconds" type="text"/>
+            </fieldset>
+            <h2>End Time</h2>
+            <label for="endHours">HH</label>
+            <input name="endHours" ng-model="accelerationGraphFilter.endTime.hours" type="text"/>
+            <label for="endMinutes">MM</label>
+            <input name="endMinutes" ng-model="accelerationGraphFilter.endTime.minutes" type="text"/>
+            <label for="endSeconds">ss</label>
+            <input name="endSeconds" ng-model="accelerationGraphFilter.endTime.seconds" type="text"/>
+            </fieldset>
+
             <nvd3 options="accelerationGraphOptions" data="accelerationGraphData" config="{refreshDataOnly: true}"></nvd3>
         </div>
     </div>
