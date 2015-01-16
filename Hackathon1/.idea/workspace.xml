@@ -4,8 +4,8 @@
     <list default="true" id="57f526ec-087b-4630-8958-c98c144e0a5c" name="Default" comment="" />
     <ignored path="Hackathon1.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/main.html" changelist="57f526ec-087b-4630-8958-c98c144e0a5c" time="1421448204723" ignored="false" />
-    <file path="/app.js" changelist="57f526ec-087b-4630-8958-c98c144e0a5c" time="1421450302390" ignored="false" />
+    <file path="/main.html" changelist="57f526ec-087b-4630-8958-c98c144e0a5c" time="1421450976274" ignored="false" />
+    <file path="/app.js" changelist="57f526ec-087b-4630-8958-c98c144e0a5c" time="1421451205872" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +28,7 @@
       <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="52" selection-start="2391" selection-end="2391" vertical-scroll-proportion="-25.423077">
+            <state line="53" column="80" selection-start="2512" selection-end="2521" vertical-scroll-proportion="-15.538462">
               <folding />
             </state>
           </provider>
@@ -37,7 +37,7 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="29" selection-start="606" selection-end="606" vertical-scroll-proportion="0.2982456">
+            <state line="15" column="47" selection-start="651" selection-end="651" vertical-scroll-proportion="0.2982456">
               <folding />
             </state>
           </provider>
@@ -277,14 +277,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="52" selection-start="2391" selection-end="2391" vertical-scroll-proportion="-25.423077">
+        <state line="53" column="80" selection-start="2512" selection-end="2521" vertical-scroll-proportion="-15.538462">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="29" selection-start="606" selection-end="606" vertical-scroll-proportion="0.2982456">
+        <state line="15" column="47" selection-start="651" selection-end="651" vertical-scroll-proportion="0.2982456">
           <folding />
         </state>
       </provider>
