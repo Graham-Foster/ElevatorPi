@@ -9,10 +9,11 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
     $scope.showRawData = false;
 
     $scope.buttonLabel = "Show All Data";
-    $scope.polling = true;
+    $scope.polling = false;
 
     $scope.init = function() {
-         $scope.pollServer();
+         //$scope.pollServer();
+        $scope.loadAllData();
     };
 
     $scope.loadAllData = function() {
@@ -46,6 +47,7 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
                 //if ($scope.accelerationGraphData[0].values.length > 20) $scope.accelerationGraphData[0].values.shift();
                 //$scope.$apply();
             });
+            $scope.accelerationGraphData[0].values.push({x:null, y:null});
         }
     });
 
@@ -53,9 +55,6 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
         if ($scope.polling) {
             $scope.accelerationGraphData[0].values.push({x:new Date(value.Timestamp).valueOf(), y:value.AccZ});
             if ($scope.accelerationGraphData[0].values.length > 20) $scope.accelerationGraphData[0].values.shift();
-            //$scope.$apply();
-
-
 
         }
     };
@@ -71,17 +70,19 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
 
     $scope.pollServer = function() {
         console.log("POLLING");
-        ElevatorDataService.getElevatorData().then(function(response){
-            if (response.data && response.data.length > 0) {
-                angular.forEach(response.data, function(value, key){
-                    $scope.elevatorData.push(value);
-                    $scope.updateGraph(value);
-                })
-            }
-            $timeout(function(){$scope.timeoutHandler()}, $scope.pollFrequency);
-        }, function(){
-            console.log("ERROR")
-        });
+        if (!$scope.polling) {
+            ElevatorDataService.getElevatorData().then(function(response){
+                if (response.data && response.data.length > 0) {
+                    angular.forEach(response.data, function(value, key){
+                        $scope.elevatorData.push(value);
+                        $scope.updateGraph(value);
+                    });
+                }
+                $timeout(function(){$scope.timeoutHandler()}, $scope.pollFrequency);
+            }, function(){
+                console.log("ERROR")
+            });
+        }
     };
 
     $scope.timeoutHandler = function() {
