@@ -123,7 +123,34 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
         values:[],
         key:'Acceleration'
     }];
+
+    $scope.filterAccGraph = function() {
+        var startTimeStr = "Jan 16 2015 " + pad($scope.accelerationGraphFilter.startTime.hours, 2) + ":"
+            + pad($scope.accelerationGraphFilter.startTime.minutes, 2) + ":"
+            + pad($scope.accelerationGraphFilter.startTime.seconds, 2)
+        var startTime = new Date(startTimeStr);
+
+        var endTimeStr = "Jan 16 2015 " + pad($scope.accelerationGraphFilter.endTime.hours, 2) + ":"
+            + pad($scope.accelerationGraphFilter.endTime.minutes, 2) + ":"
+            + pad($scope.accelerationGraphFilter.endTime.seconds, 2)
+        var endTime = new Date(endTimeStr);
+
+        ElevatorDataService.getElevatorData(startTime, endTime).then(
+            function(response) {
+                $scope.elevatorData = response.data;
+            }, function() {
+                console.log("ERROR");
+            }
+        )
+
+    }
 }]);
+
+function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
 
 module.factory('ElevatorDataService', ['$http', '$q', function($http, $q){
     return {
