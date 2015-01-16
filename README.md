@@ -1,1 +1,1 @@
-# ElevatorPi
+# ElevatorPi Hackathon Project
