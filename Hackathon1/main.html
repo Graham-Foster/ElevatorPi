@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="elevatorModule" lang="en">
+<head>
+    <title>Elevator Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://code.angularjs.org/1.2.28/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://rawgit.com/mbostock/d3/master/d3.min.js"></script>
+    <script src="https://rawgit.com/novus/nvd3/master/nv.d3.min.js"></script>
+    <script src="https://rawgit.com/krispo/angular-nvd3/master/dist/angular-nvd3.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://rawgit.com/novus/nvd3/master/nv.d3.min.css"/>
+</head>
+<body>
+    <div class="container" ng-controller="MainController" ng-init="init()">
+        <div ng-show="showRawData">
+            <button ng-click="showAccGraphToggle()">Acceleration Graph</button>
+            <button ng-click="toggleData()">{{buttonLabel}}</button>
+            <button ng-click="clear()">Clear</button>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>ACC-X</th>
+                    <th>ACC-Y</th>
+                    <th>ACC-Z</th>
+                    <th>ALT</th>
+                    <th>PRESSURE</th>
+                    <th>MOTION</th>
+                    <th>BUTTON</th>
+                </tr>
+                </thead>
+                <tbody class="table-striped">
+                <tr ng-repeat="dataRow in elevatorData">
+                    <td>{{dataRow.Timestamp}}</td>
+                    <td>{{dataRow.AccX}}</td>
+                    <td>{{dataRow.AccY}}</td>
+                    <td>{{dataRow.AccZ}}</td>
+                    <td>{{dataRow.Altitude}}</td>
+                    <td>{{dataRow.Pressure}}</td>
+                    <td>{{dataRow.Motion}}</td>
+                    <td>{{dataRow.Button}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div ng-show="showAccGraph">
+            <button ng-click="showRawDataToggle()">Raw Data</button>
+            <nvd3 options="accelerationGraphOptions" data="accelerationGraphData" config="{refreshDataOnly: true}"></nvd3>
+        </div>
+    </div>
+</body>
+</html>
