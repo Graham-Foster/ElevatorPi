@@ -2,6 +2,7 @@ console.log("LOADED");
 var module = angular.module('elevatorModule', ['nvd3']);
 
 module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService', 'DataTransformService', function($scope, $timeout, ElevatorDataService, DataTransformService){
+
     $scope.columnHeaders = ['Time', 'ACC-X', 'ACC-Y', 'ACC-Z', 'ALT', 'PRESSURE', 'MOTION', 'BUTTON'];
     $scope.elevatorData = [];
     $scope.pollFrequency = 5000;
@@ -18,6 +19,10 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
 
     $scope.loadAllData = function() {
         ElevatorDataService.getElevatorData(0, new Date().valueOf()).then(function(response){
+
+            //Transform data here:
+            response.data = DataTransformService.transformToFloors(response.data);
+
             $scope.elevatorData = response.data;
         }, function(){
             console.log("ERROR")

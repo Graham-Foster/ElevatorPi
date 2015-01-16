@@ -1,10 +1,14 @@
 angular.module('elevatorModule').service('DataTransformService', function(){
     return {
 
-        transformToFloors: function(){
-        },
+        transformToFloors: function(data){
+            //data looks like:
+            //
+            // {
 
-        something else:
+
+            return data;
+        }
 
     }
 });
