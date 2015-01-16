@@ -1,0 +1,11 @@
+CREATE TABLE elevator (
+	ID INTEGER PRIMARY KEY,
+	Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+	AccX REAL,
+	AccY REAL,
+	AccZ REAL,
+	Altitude REAL,
+	Pressure REAL,
+	Motion INTEGER,
+	Button INTEGER
+);
