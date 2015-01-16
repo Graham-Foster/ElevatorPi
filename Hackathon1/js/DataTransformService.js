@@ -14,7 +14,7 @@ angular.module('elevatorModule').service('DataTransformService', function(){
     },
 
     var transformToFloors = function(altitude){
-          return 0;
+          return (altitude + 5.5)/3.5;
     },
         
 
