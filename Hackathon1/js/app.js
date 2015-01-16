@@ -26,7 +26,7 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
         ElevatorDataService.getElevatorData(0, new Date().valueOf()).then(function(response){
 
             // normalize data
-            response.data = DataTransformService.normalizeValues(response.data);
+            response.data = DataTransformService.normalizeData(response.data);
 
             //Transform data here:
             response.data = DataTransformService.transformToFloors(response.data);
