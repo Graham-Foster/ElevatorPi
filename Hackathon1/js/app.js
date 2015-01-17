@@ -8,7 +8,7 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
     $scope.pollFrequency = 5000;
     $scope.showAccGraph = true;
     $scope.showRawData = false;
-    $scope.showTimeLookup = false;
+    $scope.showAlternateGraph = false;
 
     $scope.buttonLabel = "Show All Data";
     $scope.polling = false;
@@ -146,9 +146,18 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
 
     }
 
-    $scope.toggleTimeLookup = function(){
-        $scope.showTimeLookup = !$scope.showTimeLookup;
+    $scope.showOtherGraph = function() {
+        if($scope.showAlternateGraph) {
+            $scope.showAccGraph = true;
+            $scope.showRawData = false;
+            $scope.showAlternateGraph = false;
+        } else {
+            $scope.showAccGraph = false;
+            $scope.showRawData = false;
+            $scope.showAlternateGraph = true;
+        }
     }
+
 
 }]);
 
