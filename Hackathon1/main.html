@@ -16,6 +16,13 @@
 </head>
 <body>
     <div class="container" ng-controller="MainController" ng-init="init()">
+        <!--Lookup Specific time-->
+        <button ng-click="toggleTimeLookup()">Where's the Elevator</button>
+        <div ng-show="showTimeLookup">
+            test
+        </div>
+
+
         <div ng-show="showRawData">
             <button ng-click="showAccGraphToggle()">Acceleration Graph</button>
             <button ng-click="toggleData()">{{buttonLabel}}</button>
