@@ -29,7 +29,7 @@
       <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="38" selection-start="979" selection-end="979" vertical-scroll-proportion="9.961538">
+            <state line="19" column="38" selection-start="1092" selection-end="1092" vertical-scroll-proportion="9.961538">
               <folding />
             </state>
           </provider>
@@ -38,7 +38,7 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="23" selection-start="5144" selection-end="5144" vertical-scroll-proportion="0.54269004">
+            <state line="141" column="26" selection-start="4797" selection-end="4807" vertical-scroll-proportion="1.3380117">
               <folding />
             </state>
           </provider>
@@ -47,7 +47,7 @@
       <file leaf-file-name="DataTransformService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/DataTransformService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="20" selection-start="455" selection-end="459" vertical-scroll-proportion="0.0">
+            <state line="25" column="6" selection-start="844" selection-end="844" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -64,8 +64,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/main.html" />
-        <option value="$PROJECT_DIR$/js/DataTransformService.js" />
         <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/js/DataTransformService.js" />
       </list>
     </option>
   </component>
@@ -286,23 +286,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/DataTransformService.js">
+    <entry file="file://$PROJECT_DIR$/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="20" selection-start="455" selection-end="459" vertical-scroll-proportion="0.0">
+        <state line="19" column="38" selection-start="1092" selection-end="1092" vertical-scroll-proportion="9.961538">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.html">
+    <entry file="file://$PROJECT_DIR$/js/DataTransformService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="38" selection-start="979" selection-end="979" vertical-scroll-proportion="9.961538">
+        <state line="25" column="6" selection-start="844" selection-end="844" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="23" selection-start="5144" selection-end="5144" vertical-scroll-proportion="0.54269004">
+        <state line="141" column="26" selection-start="4797" selection-end="4807" vertical-scroll-proportion="1.3380117">
           <folding />
         </state>
       </provider>
