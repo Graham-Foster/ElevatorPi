@@ -138,7 +138,7 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
             + pad($scope.accelerationGraphFilter.endTime.seconds, 2)
         var endTime = new Date(endTimeStr);
 
-        ElevatorDataService.getElevatorData(startTime, endTime).then(
+        ElevatorDataService.getElevatorData(startTime.valueOf(), endTime.valueOf()).then(
             function(response) {
                 $scope.elevatorData = response.data;
             }, function() {
