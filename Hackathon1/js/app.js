@@ -10,7 +10,7 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
     $scope.showRawData = false;
     $scope.showAlternateGraph = false;
 
-    $scope.buttonLabel = "Show All Data";
+    $scope.buttonLabel = "Restart polling";
     $scope.polling = false;
 
     $scope.accelerationGraphFilter = {
