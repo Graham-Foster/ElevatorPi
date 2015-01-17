@@ -9,6 +9,7 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
     $scope.showAccGraph = true;
     $scope.showAltitudeGraph = true;
     $scope.showRawData = false;
+    $scope.showAlternateGraph = false;
 
     $scope.buttonLabel = "Show All Data";
     $scope.polling = false;
@@ -56,7 +57,6 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
             angular.forEach(newValue, function(value, key){
                 $scope.accelerationGraphData[0].values.push({x:new Date(value.Timestamp).valueOf(), y:value.AccZ});
             });
-            $scope.accelerationGraphData[0].values.push({x:null, y:null});
         }
     });
 
@@ -165,13 +165,36 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
 
         ElevatorDataService.getElevatorData(startTime.valueOf(), endTime.valueOf()).then(
             function(response) {
+                console.log(response.data);
                 $scope.elevatorData = response.data;
+                setTimeout(function() {
+                    $scope.accelerationGraphData[0].values = [{x:null, y:null}];
+                    angular.forEach(response.data, function(value, key){
+                        $scope.accelerationGraphData[0].values.push({x:new Date(value.Timestamp).valueOf(), y:value.AccZ});
+                    });
+                    $scope.$apply();
+                }, 10);
             }, function() {
                 console.log("ERROR");
             }
         )
 
+
     }
+
+    $scope.showOtherGraph = function() {
+        if($scope.showAlternateGraph) {
+            $scope.showAccGraph = true;
+            $scope.showRawData = false;
+            $scope.showAlternateGraph = false;
+        } else {
+            $scope.showAccGraph = false;
+            $scope.showRawData = false;
+            $scope.showAlternateGraph = true;
+        }
+    }
+
+
 }]);
 
 function pad(num, size) {
