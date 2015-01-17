@@ -56,6 +56,7 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
         if (!$scope.polling) {
             angular.forEach(newValue, function(value, key){
                 $scope.accelerationGraphData[0].values.push({x:new Date(value.Timestamp).valueOf(), y:value.AccZ});
+                $scope.altitudeGraphData[0].values.push({x:new Date(value.Timestamp).valueOf(), y:value.Altitude});
             });
         }
     });
