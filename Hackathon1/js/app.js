@@ -28,9 +28,6 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
             // normalize data
             response.data = DataTransformService.normalizeData(response.data);
 
-            //Transform data here:
-            response.data = DataTransformService.transformToFloors(response.data);
-
             $scope.elevatorData = response.data;
         }, function(){
             console.log("ERROR")
