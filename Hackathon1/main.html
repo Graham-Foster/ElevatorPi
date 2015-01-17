@@ -69,6 +69,10 @@
             </fieldset>
 
             <nvd3 options="accelerationGraphOptions" data="accelerationGraphData" config="{refreshDataOnly: true}"></nvd3>
+
+        </div>
+        <div ng-show="showAltitudeGraph">            
+            <nvd3 options="altitudeGraphOptions" data="altitudeGraphData" config="{refreshDataOnly: true}"></nvd3>
         </div>
     </div>
 </body>

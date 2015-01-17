@@ -7,6 +7,7 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
     $scope.elevatorData = [];
     $scope.pollFrequency = 5000;
     $scope.showAccGraph = true;
+    $scope.showAltitudeGraph = true;
     $scope.showRawData = false;
 
     $scope.buttonLabel = "Show All Data";
@@ -122,6 +123,33 @@ module.controller('MainController', ['$scope', '$timeout', 'ElevatorDataService'
     $scope.accelerationGraphData = [{
         values:[],
         key:'Acceleration'
+    }];
+    
+    $scope.altitudeGraphOptions = {
+        chart: {
+            type: 'lineChart',
+            height: 800,
+            width:1000,
+            margin : {
+                top: 20,
+                right: 20,
+                bottom: 40,
+                left: 55
+            },
+            x: function(d){ return d.x; },
+            y: function(d){ return d.y; },
+            useInteractiveGuideline: true,
+            transitionDuration:500,
+            yAxis: {
+                tickFormat: function(d){
+                    return d3.format('.01f')(d);
+                }
+            }
+        }
+    };
+    $scope.altitudeGraphData = [{
+        values:[],
+        key:'Altitude'
     }];
 
     $scope.filterAccGraph = function() {
